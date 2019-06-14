@@ -10,11 +10,19 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    @IBOutlet weak var diceOne: UIImageView!
+    @IBOutlet weak var diceTwo: UIImageView!
+    
+    var diceArray = [ UIImage(imageLiteralResourceName: "DiceOne"), UIImage(imageLiteralResourceName: "DiceTwo"), UIImage(imageLiteralResourceName: "DiceThree"), UIImage(imageLiteralResourceName: "DiceFour"), UIImage(imageLiteralResourceName: "DiceFive"), UIImage(imageLiteralResourceName: "DiceSix") ]
+   
+    
+    @IBAction func shufflePressed(_ sender: UIButton) {
+        print("Shuffle is done")
+        
+        diceOne.image = diceArray[Int.random(in: 0...5)]
+        diceTwo.image = diceArray[Int.random(in: 0...5)]
+         
     }
-
-
+    
 }
 
